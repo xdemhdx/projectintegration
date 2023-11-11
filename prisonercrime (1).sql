@@ -1,0 +1,10 @@
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (12, 5, 3, '1995-01-18', '1996-07-23', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (3, 2, 3, '2016-05-09', '2015-11-09', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (20, 2, 3, '2011-09-16', '1964-04-03', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (28, 5, 6, '2014-05-07', '1982-03-05', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (12, 4, 5, '1988-01-07', '2007-06-27', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (4, 5, 5, '2013-01-14', '1982-08-10', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (44, 3, 3, '2019-11-26', '2010-07-23', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (11, 4, 6, '1968-03-05', '1976-12-30', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (15, 2, 4, '1977-12-07', '1974-10-04', null);
+insert into prisonercrime (prisoner_id, crime_id, cell_id, date_committed, date_incarcerated, release_date) values (32, 4, 6, '1971-05-16', '1998-07-11', null);

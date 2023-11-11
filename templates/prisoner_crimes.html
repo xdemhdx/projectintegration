@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Prisoner Management System</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+        }
+        .scrollable-table {
+            overflow-y: auto;
+            max-height: 500px; /* Adjust the max height as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Prison Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/all-crimes">All Crimes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/all-cells">All Cells</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/all-prisoners">All Prisoners</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Scrollable table on the left -->
+            <div class="col-lg-6">
+                <br><br><br>
+                <h1 class="text-center">Prisoners Crimes List</h1>
+
+                <div class="scrollable-table border rounded ">
+                    <table class="table">
+                        <thead class="thead-dark text-center">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Prisoner ID</th>
+                                <th scope="col">Crime ID</th>
+                                <th scope="col">Cell ID</th>
+                                <th scope="col">Date Committed</th>
+                                <th scope="col">Date Incarcerated</th>
+                                <th scope="col">Release Date</th>
+                                <th scope="col" colspan="4"> Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in pcrimes %}
+                            <tr>
+                                <td>{{i['id']}}</td>
+                                <td>{{i['prisoner_id']}}</td>
+                                <td>{{i['crime_id']}}</td>
+                                <td>{{i['cell_id']}}</td>
+                                <td>{{i['date_committed']}}</td>
+                                <td>{{i['date_incarcerated']}}</td>
+                                <td>{{i['release_date']}}</td>
+                                <td class="text-center"><a href="./{{ i['id'] }}/edit" class="action-btns  italic-text">Edit</a></td>
+                                <td class="text-center"><a href="./{{ i['id'] }}/View" class="action-btns  italic-text">View Prisoner</a></td>
+                                <td class="text-center"><a href="./{{ i['id'] }}/View" class="action-btns  italic-text">View Crime</a></td>
+                                <td class="text-center"><a href="./{{ i['id'] }}/View" class="action-btns  italic-text">View Cell</a></td>
+
+
+    
+    
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Form to add new prisoner on the right -->
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                <div class="w-50 "> <!-- You can adjust the width as needed -->
+                    <h2 class="mb-4 text-center">Add New Prsioner Crime</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="firstName">Prisoner ID</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter Prisoner ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Crime ID</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter Crime ID">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Cell ID</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter Cell ID">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Date Committed</label>
+                            <input type="date" class="form-control" id="firstName" placeholder="Enter Date Committed">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Date Incarcerated</label>
+                            <input type="date" class="form-control" id="firstName" placeholder="Enter Date Incarcerated">
+
+                        </div>
+
+                        <!-- Additional form fields should be added here -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap scripts, if needed -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
