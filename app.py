@@ -20,7 +20,7 @@ def create_app():
     app.config.from_object(Config)
     register_extensions(app)
     register_resources(app)
-    routes(app)
+    #routes(app)
 
     return app
 
@@ -43,24 +43,24 @@ def register_resources(app):
     api.add_resource(PrisonerCrimeListResource, '/pcrimes')
     api.add_resource(PrisonerCrimeResouces, '/pcrimes/<int:pcrime_id>')
 
-def routes(app):
-    @app.route('/')
-    def index():
-        prisoners_data = PrisonerListResource.get(self=None)
-        return render_template('index.html',prison=prisoners_data[0]['data'])
-    @app.route('/all-crimes')
-    def crimes():
-        crimes_data = CrimeListResource.get(self=None)
-        return render_template('crimes.html',crimes=crimes_data[0]['data'])
-    @app.route('/all-cells')
-    def cells():
-        cells_data = CellListResource.get(self=None)
-        return render_template('cells.html',cells=cells_data[0]['data'])
-    @app.route('/prisoner-crimes')
-    def prcrimes():
-        n = PrisonerCrimeListResource
-        pcrimes = n.get(self=None)
-        return render_template('prisoner_crimes.html',pcrimes=pcrimes[0]['data'])
+# def routes(app):
+#     @app.route('/')
+#     def index():
+#         prisoners_data = PrisonerListResource.get(self=None)
+#         return render_template('index.html',prison=prisoners_data[0]['data'])
+#     @app.route('/all-crimes')
+#     def crimes():
+#         crimes_data = CrimeListResource.get(self=None)
+#         return render_template('crimes.html',crimes=crimes_data[0]['data'])
+#     @app.route('/all-cells')
+#     def cells():
+#         cells_data = CellListResource.get(self=None)
+#         return render_template('cells.html',cells=cells_data[0]['data'])
+#     @app.route('/prisoner-crimes')
+#     def prcrimes():
+#         n = PrisonerCrimeListResource
+#         pcrimes = n.get(self=None)
+#         return render_template('prisoner_crimes.html',pcrimes=pcrimes[0]['data'])
 #     @app.route('/edit/<int:prisoner_id>')
 #     def edit(prisoner_id):
 #         prisoner_resource_instance = PrisonerResouces()
