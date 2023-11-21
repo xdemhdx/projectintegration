@@ -1,0 +1,57 @@
+Create Crime
+POST localhost:5000/crime
+{
+   "crime_name": "Drug Trafficking",
+    "description": "The illegal trade or distribution of drugs or controlled substances."
+}
+
+PUT localhost:5000/crime/<id>
+    {
+        "name": "Fraud",
+        "description": "Deception or misrepresentation intended to result in financial or personal gain."
+ }
+
+POST: Localhost/cell 
+ {
+            "id": 1,
+            "block_number": 0,
+            "max_capacity": 4
+        }
+POST localhost/prisoner
+
+   {
+
+            "first_name": "Shauna",
+            "last_name": "Fenning",
+            "dob": "1936-10-16"
+   }
+
+PUT localhost/prisoner
+   {
+
+            "first_name": "ALi",
+            "last_name": "ahmed",
+            "dob": "2002-10-16"
+   }
+
+
+POST localhost/pcrime
+ {
+            "prisoner_id": 51,
+            "crime_id": 5,
+            "cell_id": 3,
+            "date_committed": "1995-01-18",
+            "date_incarcerated": "1996-07-23",
+            "release_date": null
+        }
+
+
+PUT localhost/pcrime/<id>
+ {
+            "prisoner_id": 51,
+            "crime_id": 5,
+            "cell_id": 3,
+            "date_committed": "1995-01-18",
+            "date_incarcerated": "1996-07-23",
+            "release_date": "2030-07-23"
+        }

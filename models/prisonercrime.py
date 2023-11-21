@@ -54,13 +54,5 @@ class PrisonerCrime(db.Model):
         pcrime.release_date = data['release_date']
         db.session.commit()
         return pcrime.data , HTTPStatus.OK
-    @classmethod
-    def delete(cls,id):
-        pcrime = cls.query.filter(cls.id==id).first()
-        if pcrime is None:
-            return {'message':'Prisoner Crime not found'},HTTPStatus.NOT_FOUND
-        db.session.delete(pcrime)
-        db.session.commit()
-    
     
     

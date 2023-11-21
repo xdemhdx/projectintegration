@@ -27,6 +27,7 @@ class PrisonerCrimeListResource(Resource):
             return {'message': 'prisoner or crime doesnt exist'}, HTTPStatus.NOT_FOUND
         pcrime = PrisonerCrime(prisoner_id=data['prisoner_id'],
                                crime_id=data['crime_id'],
+                               cell_id = data['cell_id'],
                                date_committed=data['date_committed'],
                                 date_incarcerated=data['date_incarcerated'],
                                 release_date=data['release_date'])
@@ -39,6 +40,7 @@ class PrisonerCrimeResouces(Resource):
         if pcrime is None:
             return {'message': 'prisoner crime not found'}, HTTPStatus.NOT_FOUND
         return pcrime.data , HTTPStatus.OK
-    def delete(self,pcrime_id):
-        return Cell.delete(pcrime_id)
+    def put(self,pcrime_id):
+        data = request.get_json()
+        return PrisonerCrime.update(pcrime_id,data)
     

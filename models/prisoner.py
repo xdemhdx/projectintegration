@@ -46,18 +46,13 @@ class Prisoner(db.Model):
         prisoner = cls.query.filter(cls.id==id).first()
         if prisoner is None:
             return {'message':'prisoner not found'},HTTPStatus.NOT_FOUND
-        prisoner.frist_name = data['first_name']
+        prisoner.first_name = data['first_name']
         prisoner.last_name = data['last_name']
+        prisoner.dob = data['dob']
         db.session.commit()
         return prisoner.data , HTTPStatus.OK
-    @classmethod
-    def delete(cls,id):
-        prisoner = cls.query.filter(cls.id==id).first()
-        if prisoner is None:
-            return {'message':'prisoner not found'},HTTPStatus.NOT_FOUND
-        db.session.delete(prisoner)
-        db.session.commit()
-        
+
+
     
     
     

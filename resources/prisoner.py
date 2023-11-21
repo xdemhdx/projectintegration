@@ -28,7 +28,5 @@ class PrisonerResouces(Resource):
         return prisoner.data , HTTPStatus.OK
     def put(self,prisoner_id):
         data = request.get_json()
-        return Cell.update(prisoner_id,data)
-    def delete(self,prisoner_id):
-        return Prisoner.delete(prisoner_id)
+        return Prisoner.update(prisoner_id,data)
     
