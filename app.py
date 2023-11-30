@@ -42,7 +42,7 @@ def register_resources(app):
     api.add_resource(PrisonerResouces, '/prisoner/<int:prisoner_id>')
     api.add_resource(PrisonerCrimeListResource, '/pcrimes')
     api.add_resource(PrisonerCrimeResouces, '/pcrimes/<int:pcrime_id>')
-
+# ignore this i made it for the gui part
 # def routes(app):
 #     @app.route('/')
 #     def index():
